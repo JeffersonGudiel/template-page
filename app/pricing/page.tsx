@@ -1,4 +1,5 @@
 import Background from "@/components/ui/background";
+import { FadeInSection } from "@/components/ui/FadeInSection";
 import { FAQSection } from "@/components/ui/faq";
 import { Footer } from "@/components/ui/Footer";
 import Navbar from "@/components/ui/nav";
@@ -14,9 +15,15 @@ export default function Home() {
       <div className="mt-24">
         <PricingSection />
       </div>
-      <TrustedSection />
-      <FAQSection />
-      <Footer />
+      <FadeInSection>
+        <TrustedSection />
+      </FadeInSection>
+      <FadeInSection>
+        <FAQSection />
+      </FadeInSection>
+      <FadeInSection>
+        <Footer />
+      </FadeInSection>
     </ThemeProvider>
   );
 }

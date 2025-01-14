@@ -1,5 +1,6 @@
 import { Background } from "@/components/ui/background";
 import { CTASection } from "@/components/ui/cta";
+import { FadeInSection } from "@/components/ui/FadeInSection";
 import { Footer } from "@/components/ui/Footer";
 import Hero from "@/components/ui/Hero";
 import Navbar from "@/components/ui/nav";
@@ -16,12 +17,24 @@ export default function Home() {
       <div className="relative min-h-screen w-full">
         <Navbar />
         <Hero />
-        <ServicesSection />
-        <CTASection />
-        <ProcessSection />
-        <PricingSection />
-        <TeamSection />
-        <Footer />
+        <FadeInSection>
+          <ServicesSection />
+        </FadeInSection>
+        <FadeInSection>
+          <CTASection />
+        </FadeInSection>
+        <FadeInSection>
+          <ProcessSection />
+        </FadeInSection>
+        <FadeInSection>
+          <PricingSection />
+        </FadeInSection>
+        <FadeInSection>
+          <TeamSection />
+        </FadeInSection>
+        <FadeInSection>
+          <Footer />
+        </FadeInSection>
       </div>
     </ThemeProvider>
   );

@@ -4,6 +4,7 @@ import { ContactSection } from "@/components/ui/contact";
 import { FAQSection } from "@/components/ui/faq";
 import { Footer } from "@/components/ui/Footer";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import { FadeInSection } from "@/components/ui/FadeInSection";
 
 export default function Home() {
   return (
@@ -13,8 +14,12 @@ export default function Home() {
         <Navbar />
         <main className="pt-24">
           <ContactSection />
-          <FAQSection />
-          <Footer />
+          <FadeInSection>
+            <FAQSection />
+          </FadeInSection>
+          <FadeInSection>
+            <Footer />
+          </FadeInSection>
         </main>
       </div>
     </ThemeProvider>
