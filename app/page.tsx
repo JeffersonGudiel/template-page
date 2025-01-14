@@ -1,4 +1,4 @@
-import { BackgroundWrapper } from "@/components/ui/background";
+import { Background } from "@/components/ui/background";
 import { CTASection } from "@/components/ui/cta";
 import { Footer } from "@/components/ui/Footer";
 import Hero from "@/components/ui/Hero";
@@ -12,17 +12,16 @@ import { ThemeProvider } from "@/components/ui/ThemeProvider";
 export default function Home() {
   return (
     <ThemeProvider>
+      <Background />
       <div className="relative min-h-screen w-full">
-        <BackgroundWrapper>
-          <Navbar />
-          <Hero />
-          <ServicesSection />
-          <CTASection />
-          <ProcessSection />
-          <PricingSection />
-          <TeamSection />
-          <Footer />
-        </BackgroundWrapper>
+        <Navbar />
+        <Hero />
+        <ServicesSection />
+        <CTASection />
+        <ProcessSection />
+        <PricingSection />
+        <TeamSection />
+        <Footer />
       </div>
     </ThemeProvider>
   );
