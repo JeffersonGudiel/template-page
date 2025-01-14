@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const companies = [
-  { name: "Lightbox", logo: "/logos/lightbox.png" },
-  { name: "Galileo", logo: "/logos/galileo.png" },
-  { name: "FeedFetcher", logo: "/logos/feedfetcher.png" },
-  { name: "Boltshift", logo: "/logos/boltshift.png" },
-  { name: "Hertzscale", logo: "/logos/hertzscale.png" },
-  { name: "Globalsoft", logo: "/logos/globalsoft.png" },
+  { name: "Lightbox", logo: "/" },
+  { name: "Galileo", logo: "/" },
+  { name: "FeedFetcher", logo: "/" },
+  { name: "Boltshift", logo: "/" },
+  { name: "Hertzscale", logo: "/" },
+  { name: "Globalsoft", logo: "/" },
 ];
 
 export function TrustedSection() {

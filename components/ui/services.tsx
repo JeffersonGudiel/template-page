@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const companies = [
-  { name: "Lightbox", logo: "/logos/lightbox.png" },
-  { name: "Galileo", logo: "/logos/galileo.png" },
-  { name: "FeedFetcher", logo: "/logos/feedfetcher.png" },
-  { name: "Boltshift", logo: "/logos/boltshift.png" },
-  { name: "Hertzscale", logo: "/logos/hertzscale.png" },
-  { name: "Globalsoft", logo: "/logos/globalsoft.png" },
+  { name: "Lightbox", logo: "/" },
+  { name: "Galileo", logo: "/" },
+  { name: "FeedFetcher", logo: "/" },
+  { name: "Boltshift", logo: "/" },
+  { name: "Hertzscale", logo: "/" },
+  { name: "Globalsoft", logo: "/" },
 ];
 
 const servicesData = [
@@ -15,42 +15,42 @@ const servicesData = [
     title: "Search Engine Optimization",
     bgColor: "bg-white",
     textColor: "text-black",
-    image: "/placeholder.svg",
+    image: "/",
     link: "/services/seo",
   },
   {
     title: "Pay-per-click advertising",
-    bgColor: "bg-[#9eff00]",
+    bgColor: "bg-purple-200",
     textColor: "text-black",
-    image: "/placeholder.svg",
+    image: "/",
     link: "/services/ppc",
   },
   {
     title: "Social Media Marketing",
     bgColor: "bg-black",
     textColor: "text-white",
-    image: "/placeholder.svg",
+    image: "/",
     link: "/services/social-media",
   },
   {
     title: "Email Marketing",
     bgColor: "bg-white",
     textColor: "text-black",
-    image: "/placeholder.svg",
+    image: "/",
     link: "/services/email-marketing",
   },
   {
     title: "Content Creation",
-    bgColor: "bg-[#9eff00]",
+    bgColor: "bg-purple-200",
     textColor: "text-black",
-    image: "/placeholder.svg",
+    image: "/",
     link: "/services/content-creation",
   },
   {
     title: "Analytics and Tracking",
     bgColor: "bg-black",
     textColor: "text-white",
-    image: "/placeholder.svg",
+    image: "/",
     link: "/services/analytics",
   },
 ];

@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "Maria Katz",
     position: "Director ejecutivo",
-    image: "/placeholder.svg",
+    image: "/",
     linkedIn: "#",
     description:
       "Más de 3 años de experiencia en publicidad de búsqueda paga. Experto en gestión de campañas y análisis de rendimiento.",
@@ -14,7 +14,7 @@ const teamMembers = [
   {
     name: "John Smith",
     position: "Director de Marketing",
-    image: "/placeholder.svg",
+    image: "/",
     linkedIn: "#",
     description:
       "Especialista en estrategias de marketing digital con enfoque en ROI y crecimiento sostenible.",
@@ -22,7 +22,7 @@ const teamMembers = [
   {
     name: "Ana García",
     position: "Analista SEO",
-    image: "/placeholder.svg",
+    image: "/",
     linkedIn: "#",
     description:
       "Experta en optimización de motores de búsqueda y análisis de datos de tráfico web.",
@@ -30,7 +30,7 @@ const teamMembers = [
   {
     name: "David Chen",
     position: "Desarrollador Senior",
-    image: "/placeholder.svg",
+    image: "/",
     linkedIn: "#",
     description:
       "Especialista en desarrollo web y optimización de rendimiento de sitios.",
@@ -38,7 +38,7 @@ const teamMembers = [
   {
     name: "Sarah Johnson",
     position: "Diseñadora UX/UI",
-    image: "/placeholder.svg",
+    image: "/",
     linkedIn: "#",
     description:
       "Creadora de experiencias de usuario intuitivas y diseños web modernos.",
@@ -46,7 +46,7 @@ const teamMembers = [
   {
     name: "Carlos Rodriguez",
     position: "Especialista en PPC",
-    image: "/placeholder.svg",
+    image: "/",
     linkedIn: "#",
     description:
       "Experto en campañas de pago por clic y optimización de conversiones.",

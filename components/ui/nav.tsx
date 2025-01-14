@@ -30,7 +30,7 @@ export function NavigationMenu() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logo.png"
+              src="/"
               alt="Jefferson Logo"
               width={32}
               height={32}

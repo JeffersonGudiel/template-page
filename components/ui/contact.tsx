@@ -74,7 +74,7 @@ export function ContactSection() {
           <div className="bg-white p-8 pt-6 rounded-lg shadow-lg">
             <div className="flex justify-center mb-6">
               <Image
-                src="/logo.png"
+                src="/"
                 alt="Jeff Logo"
                 width={32}
                 height={32}

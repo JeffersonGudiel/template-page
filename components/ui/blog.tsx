@@ -21,7 +21,7 @@ const blogPosts: BlogPost[] = [
       "As we move further into 2024, the landscape of cybersecurity continues to evolve with new challenges and threats.",
     date: "Dec 24, 2023",
     imageUrl:
-      "/images/blog/blog-1.jpg",
+      "/",
     link: "#",
   },
   {
@@ -31,7 +31,7 @@ const blogPosts: BlogPost[] = [
       "As we move further into 2024, the landscape of cybersecurity continues to evolve with new challenges and threats.",
     date: "Dec 24, 2023",
     imageUrl:
-      "/images/blog/blog-2.jpg",
+      "/",
     link: "#",
   },
   {
@@ -42,7 +42,7 @@ const blogPosts: BlogPost[] = [
       "As we move further into 2024, the landscape of cybersecurity continues to evolve with new challenges and threats.",
     date: "Dec 24, 2023",
     imageUrl:
-      "/images/blog/blog-3.jpg",
+      "/",
     link: "#",
   },
   {
@@ -52,7 +52,7 @@ const blogPosts: BlogPost[] = [
       "As we move further into 2024, the landscape of cybersecurity continues to evolve with new challenges and threats.",
     date: "Dec 24, 2023",
     imageUrl:
-      "/images/blog/blog-4.jpg",
+      "/",
     link: "#",
   },
   {
@@ -62,7 +62,7 @@ const blogPosts: BlogPost[] = [
       "As we move further into 2024, the landscape of cybersecurity continues to evolve with new challenges and threats.",
     date: "Dec 24, 2023",
     imageUrl:
-      "/images/blog/blog-5.jpg",
+      "/",
     link: "#",
   },
 ];

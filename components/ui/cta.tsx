@@ -26,7 +26,7 @@ export function CTASection() {
               <div className="absolute inset-0 flex items-center justify-end">
                 <div className="w-full h-full relative">
                   <Image
-                    src="/placeholder-cta-image.jpg"
+                    src="/"
                     alt="CTA Image"
                     layout="fill"
                     objectFit="cover"
