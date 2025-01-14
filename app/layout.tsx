@@ -1,11 +1,4 @@
-import { Outfit } from "next/font/google";
 import "./globals.css";
-
-
-import { ThemeProvider } from "@/components/ui/ThemeProvider";
-
-const outfit = Outfit({ subsets: ["latin"] });
-
 export const metadata = {
   metadataBase: new URL("https://jeffersongudiel.dev/"),
   title: "Jefferson Gudiel - Full-Stack Dev - template",
@@ -21,18 +14,14 @@ export const metadata = {
   },
 };
 
-import { ReactNode } from "react";
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="es" suppressContentEditableWarning>
-      <body className={outfit.className}>
-        <div className="background-gradient"></div>
-
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
