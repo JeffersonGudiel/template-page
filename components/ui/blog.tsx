@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -67,7 +68,44 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
+const POSTS_PER_PAGE = 3;
+
 export function Blog() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const goToPage = (pageIndex: number) => {
+    setCurrentPage(pageIndex);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        nextPage();
+      } else if (event.key === "ArrowLeft") {
+        prevPage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const currentPosts = blogPosts.slice(
+    currentPage * POSTS_PER_PAGE,
+    (currentPage + 1) * POSTS_PER_PAGE
+  );
+
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-16">
       {/* Blog Header */}
@@ -84,7 +122,7 @@ export function Blog() {
             className="bg-white rounded-2xl overflow-hidden shadow-lg">
             <div className="relative h-64">
               <Image
-                src={post.imageUrl}
+                src={post.imageUrl || "/placeholder.svg"}
                 alt={post.title}
                 fill
                 className="object-cover"
@@ -127,13 +165,13 @@ export function Blog() {
 
       {/* More Posts Grid */}
       <div className="grid md:grid-cols-3 gap-8 mb-12">
-        {blogPosts.slice(2, 5).map((post) => (
+        {currentPosts.map((post) => (
           <div
             key={post.id}
             className="bg-white rounded-2xl overflow-hidden shadow-lg">
             <div className="relative h-48">
               <Image
-                src={post.imageUrl}
+                src={post.imageUrl || "/placeholder.svg"}
                 alt={post.title}
                 fill
                 className="object-cover"
@@ -169,12 +207,44 @@ export function Blog() {
         ))}
       </div>
 
-      {/* Pagination Dots */}
-      <div className="flex justify-center gap-2">
-        <button className="w-2 h-2 rounded-full bg-black"></button>
-        <button className="w-2 h-2 rounded-full bg-gray-300"></button>
-        <button className="w-2 h-2 rounded-full bg-gray-300"></button>
-        <button className="w-2 h-2 rounded-full bg-gray-300"></button>
+      {/* Pagination Dots and Navigation */}
+      <div className="flex justify-center items-center gap-4">
+        <button onClick={prevPage} className="p-2">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        {Array.from({ length: totalPages }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToPage(index)}
+            className={`w-3 h-3 rounded-full ${
+              currentPage === index ? "bg-black" : "bg-gray-300"
+            }`}></button>
+        ))}
+        <button onClick={nextPage} className="p-2">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
