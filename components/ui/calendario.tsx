@@ -39,12 +39,14 @@ export function Calendario() {
   const [eventoExpandido, setEventoExpandido] = useState<string | null>(null);
 
   const diasDelMes = Array.from({ length: 31 }, (_, i) => i + 1);
+  const diasSemana = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
 
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-7 gap-2">
-        {["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"].map((dia) => (
-          <div key={dia} className="text-center font-bold">
+      {/* Vista de escritorio */}
+      <div className="hidden md:grid grid-cols-7 gap-2">
+        {diasSemana.map((dia) => (
+          <div key={dia} className="text-center font-bold p-2">
             {dia}
           </div>
         ))}
@@ -72,6 +74,47 @@ export function Calendario() {
               ))}
           </div>
         ))}
+      </div>
+
+      {/* Vista móvil */}
+      <div className="md:hidden">
+        {diasDelMes.map((dia) => {
+          const eventosDelDia = eventos.filter(
+            (evento) => evento.fecha.getDate() === dia
+          );
+          if (eventosDelDia.length === 0) return null;
+
+          return (
+            <div key={dia} className="mb-4 border-b pb-2">
+              <div className="font-bold text-lg mb-2">
+                {dia} {diasSemana[new Date(2023, 5, dia).getDay()]}
+              </div>
+              {eventosDelDia.map((evento) => (
+                <div key={evento.id} className="bg-blue-100 rounded p-2 mb-2">
+                  <button
+                    className="w-full text-left"
+                    onClick={() =>
+                      setEventoExpandido(
+                        eventoExpandido === evento.id ? null : evento.id
+                      )
+                    }>
+                    <div className="font-semibold">{evento.titulo}</div>
+                    {eventoExpandido === evento.id && (
+                      <div className="text-sm mt-1">{evento.descripcion}</div>
+                    )}
+                  </button>
+                  <Link
+                    href={evento.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 text-sm mt-1 inline-block">
+                    Ver más
+                  </Link>
+                </div>
+              ))}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
