@@ -12,7 +12,7 @@ export function NavigationMenu() {
   const { theme, toggleTheme } = useTheme();
 
   const menuItems = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "About", href: "#" },
     { name: "Integration", href: "#" },
     { name: "Changelog", href: "#" },
@@ -157,15 +157,17 @@ export function NavigationMenu() {
                 )}
               </div>
               <Link
-                href="#"
+                href="/features"
                 className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-[#9eff00]">
                 Features
               </Link>
-              <button className="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-[#9eff00]">
-                Pricing
-              </button>
               <Link
-                href="#"
+                href="/pricing"
+                className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-[#9eff00]">
+                Pricing
+              </Link>
+              <Link
+                href="/contact"
                 className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-[#9eff00]">
                 Contact
               </Link>
